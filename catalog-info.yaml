@@ -1,0 +1,36 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test-demo
+  description: test
+  annotations:
+    github.com/project-slug: ServerlessOpsIO/test-demo
+
+    backstage.io/techdocs-ref: dir:.
+
+spec:
+  type: api
+  lifecycle: production
+  owner: group:045jfvxd35j2fqo
+  system: system:testing
+
+  providesApis:
+    - api:test-demo
+
+
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: test-demo
+  description: |
+    test
+spec:
+  type: openapi
+  system: system:testing
+  lifecycle: production
+  owner: group:045jfvxd35j2fqo
+  definition:
+    $text: https://github.com/ServerlessOpsIO/test-demo/blob/main/openapi.yaml
